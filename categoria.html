@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Categoria - Controle de Estoque</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="categoria.html">Categorias</a>
+      <a href="fornecedor.html">Fornecedores</a>
+      <a href="produto.html">Produtos</a>
+      <a href="entrada.html">Entrada de estoque</a>
+      <a href="saida.html">Saída de estoque</a>
+  </nav>
+  <main>
+    <h1>Cadastro de Categoria</h1>
+    <p class="intro">Organize os produtos do estoque em categorias, como Smartphones, Consoles ou Eletrodomésticos.</p>
+    <form id="formulario" data-endpoint="php/categoria.php" novalidate>
+      <label for="nome">Nome da categoria</label>
+      <input type="text" id="nome" name="nome" required placeholder="Ex.: Smartphones" >
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" rows="3" required placeholder="Descreva o tipo de produto desta categoria"></textarea>
+      <label for="setor">Setor do depósito</label>
+      <select id="setor" name="setor" required><option value="">Selecione...</option><option value="eletronicos">Eletrônicos</option><option value="games">Games</option><option value="eletrodomesticos">Eletrodomésticos</option><option value="acessorios">Acessórios</option></select>
+      <label for="prioridade">Prioridade de reposição</label>
+      <select id="prioridade" name="prioridade" required><option value="">Selecione...</option><option value="alta">Alta</option><option value="media">Média</option><option value="baixa">Baixa</option></select>
+      <label for="ativa">Categoria ativa?</label>
+      <select id="ativa" name="ativa" required><option value="">Selecione...</option><option value="sim">Sim</option><option value="nao">Não</option></select>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem" role="status"></div>
+    <p><a class="voltar" href="index.html">&larr; Voltar à página inicial</a></p>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

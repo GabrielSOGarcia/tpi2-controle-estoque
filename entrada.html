@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrada de Estoque - Controle de Estoque</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="categoria.html">Categorias</a>
+      <a href="fornecedor.html">Fornecedores</a>
+      <a href="produto.html">Produtos</a>
+      <a href="entrada.html">Entrada de estoque</a>
+      <a href="saida.html">Saída de estoque</a>
+  </nav>
+  <main>
+    <h1>Entrada de Estoque</h1>
+    <p class="intro">Registre a chegada de mercadoria comprada de um fornecedor.</p>
+    <form id="formulario" data-endpoint="php/entrada.php" novalidate>
+      <label for="sku">Código (SKU) do produto</label>
+      <input type="text" id="sku" name="sku" required placeholder="Ex.: CEL-001" >
+      <label for="fornecedor">Fornecedor</label>
+      <input type="text" id="fornecedor" name="fornecedor" required placeholder="Ex.: Distribuidora Tech Ltda" >
+      <label for="quantidade">Quantidade recebida</label>
+      <input type="number" id="quantidade" name="quantidade" required placeholder="" min="1">
+      <label for="custo_unitario">Custo unitário (R$)</label>
+      <input type="number" id="custo_unitario" name="custo_unitario" required placeholder="" min="0" step="0.01">
+      <label for="data_entrada">Data de entrada</label>
+      <input type="date" id="data_entrada" name="data_entrada" required placeholder="" >
+      <label for="nota_fiscal">Número da nota fiscal</label>
+      <input type="text" id="nota_fiscal" name="nota_fiscal" required placeholder="Somente números" >
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem" role="status"></div>
+    <p><a class="voltar" href="index.html">&larr; Voltar à página inicial</a></p>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

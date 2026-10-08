@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Fornecedor - Controle de Estoque</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="categoria.html">Categorias</a>
+      <a href="fornecedor.html">Fornecedores</a>
+      <a href="produto.html">Produtos</a>
+      <a href="entrada.html">Entrada de estoque</a>
+      <a href="saida.html">Saída de estoque</a>
+  </nav>
+  <main>
+    <h1>Cadastro de Fornecedor</h1>
+    <p class="intro">Registre os fornecedores que abastecem o estoque, com dados de contato e prazo de entrega.</p>
+    <form id="formulario" data-endpoint="php/fornecedor.php" novalidate>
+      <label for="razao_social">Razão social</label>
+      <input type="text" id="razao_social" name="razao_social" required placeholder="Ex.: Distribuidora Tech Ltda" >
+      <label for="cnpj">CNPJ</label>
+      <input type="text" id="cnpj" name="cnpj" required placeholder="Somente números ou com pontuação" >
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required placeholder="contato@fornecedor.com.br" >
+      <label for="telefone">Telefone com DDD</label>
+      <input type="text" id="telefone" name="telefone" required placeholder="34999999999" >
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" name="cidade" required placeholder="Ex.: Uberlândia" >
+      <label for="prazo_entrega">Prazo de entrega (dias)</label>
+      <input type="number" id="prazo_entrega" name="prazo_entrega" required placeholder="Ex.: 7" min="1">
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem" role="status"></div>
+    <p><a class="voltar" href="index.html">&larr; Voltar à página inicial</a></p>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
